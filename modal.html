@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Modal</title>
+    <link rel="stylesheet" href="./lib/bootstrap.min.css">
+</head>
+<body>
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exemplo-modal">
+        Abrir modal
+    </button>
+    <div class="modal" id="exemplo-modal" data-bs-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Titulo da Modal</h5>
+                    <button data-bs-dismiss="modal" type="button" class="btn-close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora assumenda eius harum ipsa rem repudiandae molestiae voluptates unde qui praesentium, cum sint incidunt debitis quo minima quas officiis, commodi ducimus.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <h5>Rodape da Modal</h5>
+                    <button  type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                    <button  type="button" class="btn btn-success" data-bs-dismiss="modal">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- O script abaixo faz com que abra a modal automaticamente apó 3 segundos ao entar na pagina -->
+    <script src="./lib/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            const modalExemplo = new bootstrap.Modal('#exemplo-modal');
+            setTimeout(function(){
+                modalExemplo.show();
+            }, 3000);
+        })
+    </script>
+</body>
+</html>
